@@ -113,7 +113,7 @@ contract Vault{
        owner.transfer(ethToBeClaimed[msg.sender]);
        //reset the mapping once the amount is withdrawn
        ethToBeClaimed[msg.sender] = 0;
-    }  
+    }
 
     function getUSDCPerUser(address _userForUSDC) public view returns(uint256){
         return usdcToBeClaimed[_userForUSDC];

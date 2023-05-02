@@ -4,11 +4,11 @@ async function main(){
 
   const vaultContract = await ethers.getContractFactory("Vault");
 
-  const deployVaultContract = await whitelistContract.deploy();
+  const deployVaultContract = await vaultContract.deploy();
 
   await deployVaultContract.deployed();
 
-  console.log("whitelist contract address is:", deployVaultContract.address);
+  console.log("vault contract address is:", deployVaultContract.address);
 }
 
 main().then(() => process.exit(0))
