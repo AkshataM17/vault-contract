@@ -87,10 +87,10 @@ contract Vault{
        }
     }
 
-    function transferUSDC(uint256 amount) external {
-        require(usdcToken.balanceOf(msg.sender) > amount, "You do not have enough balance to send tokens");
-        usdcToken.transferFrom(msg.sender, address(this), amount);
-    }
+    // function transferUSDC(uint256 amount) external {
+    //     require(usdcToken.balanceOf(msg.sender) > amount, "You do not have enough balance to send tokens");
+    //     usdcToken.transferFrom(msg.sender, address(this), amount);
+    // }
 
     function getBalanceUSDC(address _address) external view returns(uint256){
         uint256 balance = usdcToken.balanceOf(_address);
