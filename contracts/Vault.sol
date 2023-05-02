@@ -137,5 +137,5 @@ contract Vault{
 
 }
 
-//deployed contract address with 2 minutes locking period -->  0x0ca49F86EaedCb5e625027f7d83129e1e1a04390 
+//deployed and verified contract address with 2 minutes locking period --> 0x85927217D769eF48b2631B6431847eE176db4602 
 //USDC address --> 0x0Cbb65Db53c7042D9bCC14360fEdA7b86080cF77
