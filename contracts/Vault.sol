@@ -92,11 +92,6 @@ contract Vault{
     //     usdcToken.transferFrom(msg.sender, address(this), amount);
     // }
 
-    function getBalanceUSDC(address _address) external view returns(uint256){
-        uint256 balance = usdcToken.balanceOf(_address);
-        return balance;
-    }
-
     function claimRewardsInUSDC() public{
         require(usdcToBeClaimed[msg.sender] > 0, "You do not have any USDC to claim");
         usdcToken.transfer(msg.sender, usdcToBeClaimed[msg.sender]);
@@ -115,19 +110,24 @@ contract Vault{
        ethToBeClaimed[msg.sender] = 0;
     }
 
-    function getUSDCPerUser(address _userForUSDC) public view returns(uint256){
+    function getBalanceUSDC(address _address) external view returns(uint256){
+        uint256 balance = usdcToken.balanceOf(_address);
+        return balance;
+    }
+
+    function getUSDCPerUser(address _userForUSDC) external view returns(uint256){
         return usdcToBeClaimed[_userForUSDC];
     }
 
-    function ethDepositedByUser(address _address) public view returns(uint256){
+    function ethDepositedByUser(address _address) external view returns(uint256){
         return userBalance[_address];
     }
 
-    function getNumberOfPeople() public view returns(uint256){
+    function getNumberOfPeople() external view returns(uint256){
         return numPeople;
     }
 
-    function getTotalEthAmount() public view returns(uint256){
+    function getTotalEthAmount() external view returns(uint256){
         return totalAmountOfEthDeposited;
     }
 
